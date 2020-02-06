@@ -2,6 +2,14 @@
 Getting and Knowing your Data
 #
 
+0. Reading data and regular expressions
+```python
+df = pd.read_csv('www.asdf.csv') # default sep is the comma
+df = pd.read_csv('www.asdf.csv', sep = '|')
+df = pd.read_csv('www.asdf.csv', sep = '\t') # tab separator
+df = pd.read_csv('www.asdf.csv', sep = '\s+') # white space separator
+```
+
 1. Get number of observations in dataset
 
 ```python
@@ -71,22 +79,3 @@ df['age'].value_counts().tail()
 ```python
 df.columns[104]
 ```
-
-13. Set one of columns as index of df
-```python
-df.set_index('Time', inplace = True) # Method 1
-df = df.set_index('Time', drop = True) # Method 2
-```
-
-14. Delete columns
-```python
-del df['Total']
-```
-
-15. Get location/index of maximum values 
-```python
-df.idxmax(0) # outputs row/index for each column's max value
-df.idxmax(1) # outputs column for each row's max value
-```
-
-

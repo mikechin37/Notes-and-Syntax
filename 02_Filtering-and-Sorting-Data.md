@@ -3,16 +3,11 @@ Filtering and Sorting Data
 
 #
 
-1. Convert column in df to a different type
+1. Convert column in df to a different type (float)
 
 ```python
-# to float
 df['price_float'] = [float(item[1:-1]) for item in df['price']]
-
-# from int64 to datetime64
-pd.Year - pd.ty_datetime(df.Year, format='%Y')
 ```
-
 2. Get subset df from master df with only specified columns
 ```python
 df_subset = df[['item_name', 'price']]
@@ -37,8 +32,6 @@ df_filtered = df[df.quantity == 1]
 # Filter string in search for certain characters
 df[df['Team'].str.startswith('G')]
 df[df['Team'].str[:] == ('y')]
-df[df['Team'] != "Germany"]
-df[df['Team'].isin(["Germany"])]
 ```
 
 5. Sort values from greatest to least expensive
@@ -73,9 +66,6 @@ df.iloc[0:m , 0:n]
 ```python
 # Need double brackets [[]]
 df.loc[df['Team'].isin(['England', 'Italy']), ['Team', 'Goals']]
-
-# All rows, all columns from 'Team' to 'Goals'
-df.loc[:, 'Team':'Goals']
 ```
 
 9. Slice dataframe using both iloc and loc
