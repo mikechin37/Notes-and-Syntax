@@ -60,6 +60,7 @@ df_veggie.count()
 ```python
 # Need single brackets []
 df.iloc[0:m , 0:n]
+df.iloc[[1, 3, 7], :]
 ```
 
 8. Slice dataframe via the labels of the columns and indexes to select m rows, n columns
